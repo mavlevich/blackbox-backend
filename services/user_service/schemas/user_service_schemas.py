@@ -7,10 +7,20 @@ class UserCreate(BaseModel):
     password: str
 
 
-class UserRead(BaseModel):
+class UserOut(BaseModel):
     id: int
     email: EmailStr
     username: str
 
     class Config:
         orm_mode = True
+
+
+class UserLogin(BaseModel):
+    email: EmailStr
+    password: str
+
+
+class TokenResponse(BaseModel):
+    access_token: str
+    token_type: str = "bearer"
