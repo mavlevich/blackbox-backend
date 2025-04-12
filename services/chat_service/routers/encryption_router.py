@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from services.chat_service.schemas.encryption_schemas import (
     EncryptRequest, DecryptRequest, EncryptedResponse
 )
-from services.chat_service.services.encryption import (
+from services.chat_service.core.encryption import (
     encrypt_message, decrypt_message
 )
 

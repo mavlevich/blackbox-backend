@@ -3,7 +3,7 @@ from fastapi import HTTPException, status
 
 from services.user_service.models.user_service_model import User
 from services.user_service.schemas.user_service_schemas import UserCreate
-from services.user_service.services.auth_service import hash_password
+from services.user_service.core.auth_service import hash_password
 from typing import Optional
 
 

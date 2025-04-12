@@ -6,7 +6,7 @@ from passlib.context import CryptContext
 
 from services.user_service.schemas.user_service_schemas import UserLogin, UserOut
 from services.user_service.models.user_service_model import User
-from services.user_service.services.jwt_handler import create_access_token, decode_access_token
+from services.user_service.core.jwt_handler import create_access_token, decode_access_token
 from services.user_service.db.database import get_db
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
