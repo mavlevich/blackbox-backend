@@ -1,4 +1,4 @@
-from services.chat_service.services.encryption import (
+from services.chat_service.core.encryption import (
     encrypt_message, decrypt_message
 )
 

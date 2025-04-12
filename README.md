@@ -86,7 +86,7 @@ pytest
 To run tests for a specific microservice:
 
 ```bash
-pytest services/chat_service
+pytest core/chat_service
 ```
 
 ---

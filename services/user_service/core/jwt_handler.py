@@ -8,9 +8,7 @@ from fastapi.security import OAuth2PasswordBearer
 from fastapi import Depends, HTTPException, status
 from services.user_service.db.database import get_db
 from sqlalchemy.orm import Session
-
-
-settings = Settings()
+from services.user_service.core.config import settings
 
 
 SECRET_KEY = settings.jwt_secret
@@ -49,14 +47,14 @@ def get_current_user(
             detail="Invalid or expired token"
         )
 
-    email: str = payload.get("sub")
-    if not email:
+    user_id: str = payload.get("sub")
+    if not user_id:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid token payload"
         )
 
-    user = db.query(User).filter(User.email == email).first()
+    user = db.query(User).filter(User.id == int(user_id)).first()
     if not user:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
