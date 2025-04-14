@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Text, DateTime, Boolean
 from sqlalchemy.orm import relationship
 from datetime import datetime
-from services.chat_service.db.database import Base
+from shared.db.database import Base
 
 
 class Channel(Base):
