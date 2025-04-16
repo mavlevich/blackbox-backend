@@ -9,8 +9,9 @@ load_dotenv()
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from services.user_service.db.database import Base
-from services.user_service.models import user_service_model  # noqa
+from shared.db.database import Base
+from shared.models.chat_models import Base # noqa
+
 
 target_metadata = Base.metadata
 

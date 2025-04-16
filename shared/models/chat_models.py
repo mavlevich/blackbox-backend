@@ -4,6 +4,7 @@ from datetime import datetime
 from shared.db.database import Base
 
 
+
 class Channel(Base):
     __tablename__ = "channels"
 
